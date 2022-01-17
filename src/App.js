@@ -6,8 +6,9 @@ function App() {
     <div className="App">
       <div>
         <ul>
-          <li>I love you</li>
+          <li>I changed</li>
           <li>jed</li>
+          <li>Insan</li>
         </ul>
       </div>
     </div>
