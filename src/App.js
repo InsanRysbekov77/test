@@ -9,6 +9,7 @@ function App() {
           <li>I changed</li>
           <li>jed</li>
           <li>Insan</li>
+          <li>Kudaibergen</li>
         </ul>
       </div>
     </div>
