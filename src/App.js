@@ -1,10 +1,16 @@
 
 import './App.css';
+import SingnupForm from './Components/SingnuoForm';
+
+
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Rysbekov Insan</h1>
+      <SingnupForm />
     </div>
   );
 }
