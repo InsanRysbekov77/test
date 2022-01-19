@@ -1,7 +1,6 @@
 
 import './App.css';
-import SingnupForm from './Components/SingnuoForm';
-
+import SignupForm from './Components/SignupForm';
 
 
 
@@ -9,8 +8,8 @@ import SingnupForm from './Components/SingnuoForm';
 
 function App() {
   return (
-    <div className="App">
-      <SingnupForm />
+    <div>
+      <SignupForm />
     </div>
   );
 }
