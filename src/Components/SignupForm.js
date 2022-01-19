@@ -30,18 +30,17 @@ const SignupForm = ({ submitForm} ) => {
 		setErrors(Validation(email))
 		setErrors(Validation(password))
 		setDataIsCorrect(true)
-		console.log(fullname);
-		console.log(email);
-		console.log(password);
+		// console.log(fullname);
+		// console.log(email);
+		// console.log(password);
 
 	}
 
-	useEffect = () => {
+	useEffect(()=>{
 		if(Object.keys(errors).length === 0 && dataIsCorrect){
 			submitForm(true)
 		}
-	}
-
+	},[errors])
 	return (
 		<div className='container'>
 			<div className='app-wrapper'>
@@ -76,7 +75,7 @@ const SignupForm = ({ submitForm} ) => {
 						 />
 						 {errors.password && <p className="error">{errors.password}</p>}
 					</div>
-					<button className='submit'>Sing Up</button>
+					<button className='submit' >Sing Up</button>
 				</form>
 			</div>
 		</div>
