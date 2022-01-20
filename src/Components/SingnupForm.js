@@ -22,7 +22,7 @@ const SingnupForm = ({submitForm}) => {
 		event.preventDefault();
         setErrors(Validation(values))
         SetDataIsCorrect(true)
-        console.log(handleFormSubmit);
+        console.log(values);
 	}
 
     useEffect(()=>{
