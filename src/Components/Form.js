@@ -1,24 +1,26 @@
-import React from "react";
-import { useState } from "react";
-import SingnupForm from "./SingnupForm"
-import SignupFormSuccess from "./SingnupForm";
+import Registration from "./Registration";
+import './Form.css'
+const Form = (props) => {
+    const SaveExpenseDataHandler = (enteredExpenseData) =>{
+      const expenseData = {
+        ...enteredExpenseData,
+        id:Math.random().toString(),
+      };
+      props.onLogon(expenseData)
+    }
+      return (
+        <div className="new-expense">
+          <Registration  onSaveExpenseData={SaveExpenseDataHandler}/>
+        </div>
+      );
+    };
+    export default Form;
 
-const Form = () => {
-    const [formIsSubmitted, setFormIsSubmitted] = useState(false)
 
-	const submitForm = () => {
-		setFormIsSubmitted(true)
-	}
 
-	return (
-		<div>
-			{!formIsSubmitted ? (
-				<SingnupForm submitForm={submitForm} />
-			) : (
-				<SignupFormSuccess />
-			)}
-		</div>
-	)
-}
 
-export default  Form;
+
+
+
+
+
