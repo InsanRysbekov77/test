@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import Validation from './Validation'
 
+
 const SignupForm = ({ submitForm }) => {
 	const [fullname, setFullname] = useState('')
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
+
 
 	const [errors, setErrors] = useState({})
 	const [dataIsCorrect, setDataIsCorrect] = useState(false)
@@ -36,7 +38,7 @@ const SignupForm = ({ submitForm }) => {
 		if (Object.keys(errors).length === 0 && dataIsCorrect) {
 			submitForm(true)
 		}
-	})
+	},[errors])
 	return (
 		<div className='container'>
 			<div className='app-wrapper'>
@@ -49,39 +51,39 @@ const SignupForm = ({ submitForm }) => {
 						<input
 							className='input'
 							type='text'
+							value={fullname}
 							onChange={fullnameChangeHandler}
 						/>
-						{errors.fullname && (
-							<p className='error'>{errors.fullname}</p>
-						)}
+						{errors.fullname && <p className='error'>{errors.fullname}</p>}
 					</div>
 					<div className='email'>
 						<label className='label'>email</label>
 						<input
 							className='input'
 							type='email'
+							value={email}
 							onChange={emailChangeHandler}
 						/>
-						{errors.email && (
-							<p className='error'>{errors.email}</p>
-						)}
+						{errors.email && <p className='error'>{errors.email}</p>}
 					</div>
 					<div className='password'>
 						<label className='label'>password</label>
 						<input
 							className='input'
 							type='password'
+							value={password}
 							onChange={passwordChangeHandler}
 						/>
-						{errors.password && (
-							<p className='error'>{errors.password}</p>
-						)}
+						{errors.password && <p className='error'>{errors.password}</p>}
 					</div>
-					<button className='submit'>Sing Up</button>
+					<div>
+					   <button className='submit' onClick={submitHadler}>Sing Up</button>
+					</div>
 				</form>
 			</div>
 		</div>
 	)
 }
 
-export default SignupForm
+export default SignupForm;
+

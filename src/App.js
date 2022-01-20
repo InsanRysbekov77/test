@@ -1,17 +1,13 @@
-
-import './App.css';
-import SignupForm from './Components/SignupForm';
-
-
-
-
+import React from 'react'
+import './App.css'
+import Form from './Components/Form'
 
 function App() {
-  return (
-    <div>
-      <SignupForm />
-    </div>
-  );
+	return (
+		<div>
+			<Form />
+		</div>
+	)
 }
 
-export default App;
+export default App
