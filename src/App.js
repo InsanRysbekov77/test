@@ -1,11 +1,13 @@
-
 import './App.css';
+import FormInput from './Components/FormInput';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Insan</h1>
-      <div>Rysbekov</div>
+      <form>
+        <FormInput />
+      </form>
     </div>
   );
 }
