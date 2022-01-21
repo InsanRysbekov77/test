@@ -5,9 +5,9 @@ import FormInput from './Components/FormInput';
 function App() {
   return (
     <div className="App">
-      <form>
+      <div>
         <FormInput />
-      </form>
+      </div>
     </div>
   );
 }
