@@ -1,12 +1,18 @@
 import './App.css';
-import FormInput from './Components/FormInput';
+import Form from './Components/Form';
 
 
 function App() {
+
+  const addFormDataHandler = () => {
+
+  }
+
+
   return (
     <div className="App">
       <div>
-        <FormInput />
+        <Form onAddFormData={addFormDataHandler}/>
       </div>
     </div>
   );
