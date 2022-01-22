@@ -1,12 +1,16 @@
 import { useState } from 'react';
 import './FormInput.css'
+import Validation from './Validation';
 
 const FormInput = (props) => {
 
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
-    const [country, setCountry] = useState('')
+    const [city, setCity] = useState('')
     const [message, setMessage] = useState('')
+
+    const [errors, setErrors] = useState({})
+
 
     const nameChangeHandler = (event) => {
         setName(event.target.value);
@@ -14,8 +18,8 @@ const FormInput = (props) => {
     const phoneChangeHandler = (event) => {
         setPhone(event.target.value);
     }
-    const countryChangeHandler = (event) => {
-        setCountry(event.target.value);
+    const cityChangeHandler = (event) => {
+        setCity(event.target.value);
     }
     const messageChangeHandler = (event) => {
         setMessage(event.target.value);
@@ -26,7 +30,7 @@ const FormInput = (props) => {
        const currentData = {
            name,
            phone,
-           country,
+           city,
            message
        }
        props.onSaveFormData(currentData)
@@ -38,19 +42,23 @@ const FormInput = (props) => {
                <div className='contact-box'>
                    <div className='left'></div>
                    <div className='fight'>
-                       <h2>Contact Us</h2>
+                       <h2>Info Form</h2>
                        <input 
                          type="text"
                          className='field'
                          placeholder='Your Name'
-                         onChange={nameChangeHandler} />
+                         onChange={nameChangeHandler} 
+                         />
+                         {errors.name && <p className='error'>{errors.name}</p>}
                        <input 
                          type="text" 
                          className='field' 
                          placeholder='Phone'
-                         onChange={phoneChangeHandler} />
-                       <p>Город</p>
-                       <select className='field' onChange={countryChangeHandler}>
+                         onChange={phoneChangeHandler} 
+                         />
+                           {errors.phone && <p className='error'>{errors.phone}</p>}
+                       <p>City</p>
+                       <select className='field' onChange={cityChangeHandler}>
                          <option>Бишкек</option>
                          <option>Талас</option>
                          <option>Көл</option>
@@ -59,11 +67,14 @@ const FormInput = (props) => {
                          <option>Ош</option>
                          <option>Баткен</option>
                         </select>
+                        {errors.city && <p className='error'>{errors.city}</p>}
+                        <p>About Me</p>
                        <textarea className='field' placeholder='Message' onChange={messageChangeHandler}/>
+                       {errors.message && <p className='error'>{errors.message}</p>}
                    </div>
                </div>
                  <div>
-                   <button className='submit'>Add</button>
+                   <button className='submit'>Countine</button>
                  </div>
            </div>
        </form>
