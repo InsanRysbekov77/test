@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './FormInput.css'
-import Validation from './Validation';
 
 const FormInput = (props) => {
 
@@ -8,9 +7,6 @@ const FormInput = (props) => {
     const [phone, setPhone] = useState('')
     const [city, setCity] = useState('')
     const [message, setMessage] = useState('')
-
-    const [errors, setErrors] = useState({})
-
 
     const nameChangeHandler = (event) => {
         setName(event.target.value);
@@ -49,14 +45,12 @@ const FormInput = (props) => {
                          placeholder='Your Name'
                          onChange={nameChangeHandler} 
                          />
-                         {errors.name && <p className='error'>{errors.name}</p>}
                        <input 
                          type="text" 
                          className='field' 
                          placeholder='Phone'
                          onChange={phoneChangeHandler} 
                          />
-                           {errors.phone && <p className='error'>{errors.phone}</p>}
                        <p>City</p>
                        <select className='field' onChange={cityChangeHandler}>
                          <option>Бишкек</option>
@@ -67,10 +61,11 @@ const FormInput = (props) => {
                          <option>Ош</option>
                          <option>Баткен</option>
                         </select>
-                        {errors.city && <p className='error'>{errors.city}</p>}
                         <p>About Me</p>
-                       <textarea className='field' placeholder='Message' onChange={messageChangeHandler}/>
-                       {errors.message && <p className='error'>{errors.message}</p>}
+                       <textarea 
+                         className='field' 
+                         placeholder='Message' 
+                         onChange={messageChangeHandler}/>
                    </div>
                </div>
                  <div>
