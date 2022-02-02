@@ -13,7 +13,7 @@ const  DataFetch = () => {
                 console.log(err)
             })
     }
-    return (
+    return ( 
         <>
             <div className={classes.container}>
                 {users.map((users) => (
@@ -27,7 +27,7 @@ const  DataFetch = () => {
         </>
     )
 }
-export default DataFetch;
+export default DataFetch; 
 
 
 
