@@ -1,11 +1,11 @@
 
 import './App.css';
+import DataFetching from './components/DataFetch';
 
 function App() {
   return (
     <div className="App">
-      <h1>Insan</h1>
-      <div>Insan</div>
+      <DataFetching />
     </div>
   );
 }
